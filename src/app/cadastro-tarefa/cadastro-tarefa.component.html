@@ -1,1 +1,39 @@
-<p>cadastro-tarefa works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Cadastro de Tarefa</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="taskName" class="form-label">Nome da Tarefa</label>
+              <input type="text" class="form-control" id="taskName" formControlName="taskName" placeholder="Digite o nome da tarefa">
+            </div>
+            <div class="mb-3">
+              <label for="taskDescription" class="form-label">Descrição</label>
+              <textarea class="form-control" id="taskDescription" formControlName="taskDescription" rows="3" placeholder="Digite a descrição da tarefa"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="taskPriority" class="form-label">Prioridade</label>
+              <select class="form-select" id="taskPriority" formControlName="taskPriority">
+                <option value="">Selecione a prioridade</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="taskDueDate" class="form-label">Data de Conclusão</label>
+              <input type="date" class="form-control" id="taskDueDate" formControlName="taskDueDate">
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="button" class="btn btn-secondary" (click)="limparFormulario()">Limpar</button>
+            <button type="button" class="btn btn-link" (click)="voltarParaTelaInicial()">Voltar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

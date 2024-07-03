@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroTarefaComponent } from './cadastro-tarefa/cadastro-tarefa.component';
-import { DetalhesTarefaComponent } from './detalhes-tarefa/detalhes-tarefa.component';
 import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
+import { DetalhesTarefaComponent } from './detalhes-tarefa/detalhes-tarefa.component';
 
 const routes: Routes = [
+  { path: '',  component: CadastroTarefaComponent, pathMatch: 'full' },  // Rota padrão
   { path: 'cadastro-tarefa', component: CadastroTarefaComponent },
-  { path: 'detalhes-tarefa', component: DetalhesTarefaComponent },
   { path: 'lista-tarefa', component: ListaTarefaComponent },
-  { path: '', redirectTo: '/lista-tarefa', pathMatch: 'full' },
-  { path: '**', redirectTo: '/lista-tarefa' }
+  { path: 'detalhe-tarefa', component: DetalhesTarefaComponent },
+  // Adicione outras rotas conforme necessário
 ];
 
 @NgModule({
